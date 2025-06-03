@@ -88,6 +88,7 @@ Username	Password	Role
 admin	password	USER
 
 🧠 Tip
+
 If you're facing 403 Forbidden when calling /hello, make sure:
 
 - The JWT token is valid (not expired).
