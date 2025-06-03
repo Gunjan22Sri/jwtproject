@@ -87,6 +87,17 @@ Hello, authenticated user!
 Username	Password	Role
 admin	password	USER
 
+🧠 Tip
+If you're facing 403 Forbidden when calling /hello, make sure:
+
+- The JWT token is valid (not expired).
+
+- You passed the token with the correct Bearer prefix.
+
+- Your filter is properly registered before the UsernamePasswordAuthenticationFilter.
+
+
+
 📁 Project Structure Highlights
 ```bash
 jwtproject/
@@ -106,11 +117,3 @@ jwtproject/
 ├── JwtProjectApplication.java
 └── application.properties
 
-🧠 Tip
-If you're facing 403 Forbidden when calling /hello, make sure:
-
-- The JWT token is valid (not expired).
-
-- You passed the token with the correct Bearer prefix.
-
-- Your filter is properly registered before the UsernamePasswordAuthenticationFilter.
