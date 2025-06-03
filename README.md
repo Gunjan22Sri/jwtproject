@@ -22,32 +22,26 @@ This project demonstrates how to implement **JWT-based authentication** in a Spr
    ```bash
    git clone https://github.com/Gunjan22Sri/jwtproject.git
    cd jwtproject
-Open in your IDE (like VS Code or IntelliJ).
+2. Open in your IDE (like VS Code or IntelliJ).
 
-Update application properties:
+3. Update application properties:
 
-Set your database (H2/MySQL) if not using the default.
+ - Set your database (H2/MySQL) if not using the default.
+ - Configure your UserDetailsService or initial user data.
 
-Configure your UserDetailsService or initial user data.
-
-Run the Spring Boot application:
-✅ How to Test Using Postman
+4. Run the Spring Boot application
+   
+✅ ## How to Test Using Postman
 Step 1: Get the JWT Token
 Open Postman.
 
 Create a POST request to:
 
-bash
-Copy
-Edit
 http://localhost:8080/authenticate
 Go to the Body tab → Select raw → Choose JSON.
 
 Paste this:
 
-json
-Copy
-Edit
 {
   "username": "admin",
   "password": "password"
@@ -59,9 +53,6 @@ Copy the value of token from the response.
 Step 2: Call the Secured Endpoint /hello
 Create a GET request to:
 
-bash
-Copy
-Edit
 http://localhost:8080/hello
 Go to the Authorization tab:
 
@@ -73,20 +64,15 @@ OR
 
 Go to the Headers tab and add:
 
-makefile
-Copy
-Edit
 Key: Authorization
 Value: Bearer <paste_your_token_here>
 Click Send.
 
 ✅ You should get:
 
-sql
-Copy
-Edit
 Hello, authenticated user!
-🔒 Security Configuration
+
+🔒 ##  Security Configuration
 /authenticate is public (no auth needed).
 
 All other endpoints require a valid JWT token.
@@ -98,6 +84,7 @@ Filter chain uses UsernamePasswordAuthenticationFilter.
 🧪 Sample User
 Username	Password	Role
 admin	password	USER
+
 📁 Project Structure Highlights
 jwtproject/
 ├── controller/
